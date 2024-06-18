@@ -1,6 +1,6 @@
 <!-- src/pages/IndexPage.vue -->
 <template>
-  <q-page class="main-page">
+  <q-page class="main-page" :style="mainPageStyle">
     <div class="content-container">
       <div class="text-content">
         <h1 class="main-title">
@@ -29,13 +29,15 @@
     </div>
   </q-page>
 </template>
-
 <script setup>
+const mainPageStyle = {
+  background: "url('icons/main-background.png') no-repeat center center",
+  backgroundSize: 'cover',
+};
 defineOptions({
   name: 'IndexPage',
 });
 </script>
-
 <style scoped>
 .main-page {
   position: relative;
@@ -43,11 +45,8 @@ defineOptions({
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('icons/main-background.png') no-repeat center center;
-  background-size: cover;
   overflow: hidden;
 }
-
 .content-container {
   display: flex;
   align-items: center;
@@ -58,11 +57,9 @@ defineOptions({
   color: white;
   z-index: 1;
 }
-
 .text-content {
   width: 40%;
 }
-
 .main-title {
   font-size: 4rem;
   line-height: 1.2;
@@ -70,14 +67,12 @@ defineOptions({
   text-align: left;
   margin: 0;
 }
-
 .main-subtitle {
   font-size: 1.5rem;
   line-height: 1.5;
   font-family: 'Noto Serif KR', serif;
   margin-top: 20px;
 }
-
 .video-container {
   width: 50%;
   height: 80vh;
@@ -85,7 +80,6 @@ defineOptions({
   align-items: center;
   justify-content: center;
 }
-
 .main-video {
   width: 100%;
   height: 100%;
